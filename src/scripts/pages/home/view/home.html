@@ -1,0 +1,135 @@
+<barra-portal></barra-portal>
+
+<toaster-container></toaster-container>
+
+
+<!------------------------------- VERSÃO MOBILE -------------------------------------------- -->
+
+<div ng-include="'scripts/pages/home/view/mobile/m.home.html'"
+     ng-if="((telaParaMobileXS || telaParaMobileSM) && !telaParaDesktop)">
+</div>
+
+<!----------------------------------------------------------------------------------------------- -->
+
+<div id="busca" ng-show="!pesquisaRealizada && !booleanBuscaPorAtendimento">
+  <div class="menu-busca" layout="row" layout-align="center center" hide-xs hide-sm>
+    <div class="texto-busca" flex> {{'o-que-voce-esta-procurando' | translate}}</div>
+    <form ng-submit="irParaPalavra()" layout="row" flex layout-align=" center">
+      <div class="alinha-input-busca">
+        <input id="textopesquisa" ng-model="textopesquisa"
+               placeholder="{{'voce-pode-pesquisar-por-assuntos-servicos' | translate}}"
+               class="input-busca">
+          <a ng-click="acessarServicos()" class="hand">
+            Todos os serviços</a>
+      </div>
+      <div class="back-buscar">
+        <md-button type="submit" value="submit" class="botao-busca md-whiteframe-5dp">Busca</md-button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<bread-crumb ng-if="telaParaDesktop"></bread-crumb>
+
+<div id="conteudo" class="conteudo home" ng-if="((!telaParaMobileXS || !telaParaMobileSM) && telaParaDesktop)">
+  <div class="principal" layout="row">
+    <div class="menu-lateral" layout="column" flex>
+      <div class="menu-lateral-content">
+        <v-accordion class="vAccordion--default">
+          <v-pane expanded>
+            <v-pane-header style="border-bottom: none">
+              <div class="acompanhe-pedido">{{'acompanhe-seu-pedido' | translate | uppercase}}</div>
+            </v-pane-header>
+            <v-pane-content>
+              <form ng-submit="irParaAcompanhamento()">
+                <div class="logar-acompanhamento">{{'cpf-cnpj' | translate}}</div>
+                <div class="logar-acompanhamento"><input ui-br-cpfcnpj-mask type="text"
+                                                         ng-model="atendimento.cpf"
+                                                         class="inputLogin"></div>
+                <div class="logar-acompanhamento">{{'numero-atendimento' | translate}}</div>
+                <div class="logar-acompanhamento"><input type="text"
+                                                         ng-model="atendimento.nAtendimento"
+                                                         class="inputLogin"></div>
+                <div class="logar-acompanhamento"><a href="" ng-click="irParaRecuperarAtendimento()">
+                  {{'esqueci-o-numero' | translate}}</a>
+                </div>
+                <div class="g-recaptcha"
+                     vc-recaptcha
+                     key="reCaptcha"
+                     on-create="setWidgetId(widgetId)"
+                     on-success="setResponse(response)"
+                     on-expire="cbExpiration()"
+                     style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0"></div>
+                <div class="alinhar-botao" layout-align="center center">
+                  <md-button type="submit" value="submit"
+                             class="botao-busca md-whiteframe-5dp">
+                    <span>Buscar</span>
+                  </md-button>
+                </div>
+                <div class="atendimento-sisrei">
+                  <span>{{'Atendimento-SISREI' | translate }}</span>
+
+                  <div><a href="https://sisrei.spu.planejamento.gov.br/sisrei/">
+                    ({{'clique-aqui' | translate}})</a>
+                  </div>
+                </div>
+              </form>
+            </v-pane-content>
+          </v-pane>
+        </v-accordion>
+        <v-accordion class="vAccordion--default">
+          <v-pane expanded>
+            <v-pane-header style="border-bottom: none;">
+              <div class="acompanhe-pedido">{{'acesso-a-informacao' | translate | uppercase}}</div>
+            </v-pane-header>
+            <v-pane-content>
+              <div class="sites"><a href="http://www.planejamento.gov.br/spu">
+                {{'institucional' | translate}}</a></div>
+              <div class="sites"><a
+                href="http://www.planejamento.gov.br/acesso-a-informacao/servico-informacao-cidadao-sic">
+                {{'servico-de-informacao-ao-cidadado' | translate}}</a></div>
+              <div class="sites"><a
+                href="" ng-click="irParaFAQ()">Perguntas Frequentes
+              </a>
+              </div>
+              <div class="sites"><a
+                href="" ng-click="irParaFaleConosco()">Fale Conosco
+              </a></div>
+              <div class="sites"><a
+                href="" ng-click="irParaFormulariosPDF()">Formulários em PDF
+              </a></div>
+            </v-pane-content>
+          </v-pane>
+        </v-accordion>
+      </div>
+    </div>
+
+    <div id="meio" layout="column" flex="80">
+      <div class="atendimento-virtual" ng-if="apresentarBanner">
+        <h2>Atendimento Virtual (e-SPU)</h2>
+      </div>
+
+      <div ng-if="apresentarBanner">
+        <home-assunto></home-assunto>
+      </div>
+
+      <div ng-if="apresentarPesquisa">
+        <home-pesquisa-assunto funcao-que-pesquisa="pesquisa"></home-pesquisa-assunto>
+      </div>
+
+      <div ng-if="apresentarPesquisaAtendimento">
+        <home-pesquisa-acompanhamento></home-pesquisa-acompanhamento>
+      </div>
+
+      <div ng-if="apresentarRecuperarAtendimento">
+        <home-recuperar-atendimento></home-recuperar-atendimento>
+      </div>
+
+      <home-banner ng-if="apresentarBanner"></home-banner>
+
+
+    </div>
+  </div>
+
+</div>
+<footer id="footer" ng-include="'scripts/pages/footer/view/footer.html'"></footer>

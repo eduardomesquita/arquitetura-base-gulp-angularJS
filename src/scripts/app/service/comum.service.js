@@ -3,15 +3,17 @@
     'use strict';
 
     angular
-        .module('suApp')
-        .service('comumService', function () {
+        .module('sandboxApp')
+        .service('comumService', [comumService])
+        
+        function comumService() {
 
         
-        return {
+            return {
 
+            };
         };
 
-    });
 })();
 
 

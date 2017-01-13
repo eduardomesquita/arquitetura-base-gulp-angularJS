@@ -20,6 +20,7 @@
     "browser-sync": "^2.18.6",
     "browser-sync-spa": "^1.0.3",
     "del": "^2.2.2",
+    "eslint-plugin-angular": "^1.6.1",
     "gulp": "^3.9.1",
     "gulp-angular-filesort": "^1.1.1",
     "gulp-angular-templatecache": "^2.0.0",

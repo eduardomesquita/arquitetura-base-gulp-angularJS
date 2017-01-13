@@ -20,7 +20,7 @@ gulp.task('partials', function () {
       collapseWhitespace: true
     }))
     .pipe($.angularTemplatecache('templateCacheHtml.js', {
-      module: 'suApp',
+      module: 'sandboxApp',
       root: 'scripts'
     }))
     .pipe(gulp.dest(conf.paths.tmp + '/partials/'));
