@@ -1,0 +1,21 @@
+{
+  "name": "arquitetura-base-gulp-angularjs",
+  "version": "0.0.1",
+  "homepage": "https://github.com/eduardomesquita/eduardomesquita-arquitetura-base-gulp-angularjs",
+  "authors": [
+    "Eduardo Mesquita <eduardomesquita09@gmail.com>"
+  ],
+  "description": "Arquitetura para futuros projetos",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^v1.6.0"
+  }
+}
