@@ -6,11 +6,12 @@
         .module('sandbox-app')
         .service('servicoService', ['$scope', servicoService]);
 
-        function servicoService($scope) {
+    function servicoService($scope) {
 
 
-            return {
-                
-            };
-        }
+        return {
+            
+        };
+    }
+
 })()

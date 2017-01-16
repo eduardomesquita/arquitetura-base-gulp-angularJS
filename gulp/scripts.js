@@ -19,7 +19,7 @@ gulp.task('scripts', function() {
 });
 
 function buildScripts() {
-  return gulp.src(path.join(conf.paths.src, '/scripts-servicos/**/*.js'))
+  return gulp.src(path.join(conf.paths.src, '/scripts/**/*.js'))
     .pipe($.eslint())
     .pipe($.eslint.format())
     .pipe($.size())

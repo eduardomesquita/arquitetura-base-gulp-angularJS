@@ -6,12 +6,12 @@
 		.module('sandbox-app')
 		.service('homeService', [homeService]);
 
-		function homeService() {
+	function homeService() {
 
-			return {
-				
-			}
+		return {
+			
 		}
+	}
 
 })();
 

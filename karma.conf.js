@@ -18,8 +18,8 @@ function listFiles() {
 
   var patterns = wiredep(wiredepOptions).js
     .concat([
-      path.join(conf.paths.src, '/scripts-servicos/**/*.modules.js'),
-      path.join(conf.paths.src, '/scripts-servicos/**/*.js'),
+      path.join(conf.paths.src, '/scripts/**/*.modules.js'),
+      path.join(conf.paths.src, '/scripts/**/*.js'),
       path.join(conf.paths.src, '/**/*.spec.js'),
       path.join(conf.paths.src, '/**/*.mock.js'),
     ])

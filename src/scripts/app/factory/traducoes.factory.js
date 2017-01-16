@@ -12,7 +12,7 @@
         angular.forEach(arguments, function(translationKey) {
           $translatePartialLoader.addPart(translationKey);
         });
-        $translatePartialLoader.addPart('scripts-servicos/app/language');
+        $translatePartialLoader.addPart('scripts/app/language');
 
         return $translate.refresh();
       }

@@ -10,8 +10,8 @@ var $ = require('gulp-load-plugins')({
 
 gulp.task('partials', function () {
   return gulp.src([
-    path.join(conf.paths.src, '/scripts-servicos/**/*.html'),
-    path.join(conf.paths.tmp, '/serve/scripts-servicos/**/*.html')
+    path.join(conf.paths.src, '/scripts/**/*.html'),
+    path.join(conf.paths.tmp, '/serve/scripts/**/*.html')
   ])
     .pipe($.htmlmin({
       removeEmptyAttributes: true,
@@ -21,7 +21,7 @@ gulp.task('partials', function () {
     }))
     .pipe($.angularTemplatecache('templateCacheHtml.js', {
       module: 'sandbox-app',
-      root: 'scripts-servicos'
+      root: 'scripts'
     }))
     .pipe(gulp.dest(conf.paths.tmp + '/partials/'));
 });

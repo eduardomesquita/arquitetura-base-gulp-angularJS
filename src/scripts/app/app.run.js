@@ -1,5 +1,10 @@
-angular.module('sandbox-app')
-    .run(function ($rootScope, $location, $window, $http, $state, ENV, VERSION, localStorageService) {
+(function(){
+
+    'use strict';
+
+    angular
+        .module('sandbox-app')
+        .run(function ($rootScope, $window, $http, $state, ENV, VERSION) {
 
         $rootScope.ENV = ENV;
         $rootScope.VERSION = VERSION;
@@ -16,4 +21,7 @@ angular.module('sandbox-app')
             $window.document.title = titleKey;
         });
 
-});
+    });
+
+})();
+

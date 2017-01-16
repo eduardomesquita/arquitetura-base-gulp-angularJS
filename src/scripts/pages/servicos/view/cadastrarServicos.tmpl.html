@@ -146,12 +146,12 @@
       <md-tabs md-dynamic-height md-border-bottom>
         <md-tab label="{{'solicitante' | translate}} {{servico.link == undefined ? '*' : ''}}">
           <md-content class="md-padding">
-            <div layout="row" flex ng-include="'scripts-servicos/pages/servicos/view/adicionarSolicitante.tmpl.html'"></div>
+            <div layout="row" flex ng-include="'scripts/pages/servicos/view/adicionarSolicitante.tmpl.html'"></div>
           </md-content>
         </md-tab>
         <md-tab label="{{'dados-documentos' | translate}}">
           <md-content class="md-padding">
-            <div layout="row" flex ng-include="'scripts-servicos/pages/servicos/view/adicionarDocumentos.tmpl.html'"></div>
+            <div layout="row" flex ng-include="'scripts/pages/servicos/view/adicionarDocumentos.tmpl.html'"></div>
           </md-content>
         </md-tab>
 
@@ -169,7 +169,7 @@
         <md-tab label="{{'declaracoes' | translate}} {{servico.link == undefined ? '*' : ''}}"
                 ng-disabled="!isFormulario()">
           <md-content class="md-padding">
-            <div layout="row" flex ng-include="'scripts-servicos/pages/servicos/view/adicionarDeclaracao.html'"></div>
+            <div layout="row" flex ng-include="'scripts/pages/servicos/view/adicionarDeclaracao.html'"></div>
           </md-content>
         </md-tab>
 
