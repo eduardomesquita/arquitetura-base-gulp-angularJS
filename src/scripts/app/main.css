@@ -99,3 +99,16 @@ md-datepicker.ng-invalid-required > div.md-datepicker-input-container {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.6);
 }
+
+.icon-menu{
+    fill:#fff;
+    margin: 13px 10px 0 0;
+}
+
+.footer {
+    background-color: rgb(63,81,181);
+    color: white;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}

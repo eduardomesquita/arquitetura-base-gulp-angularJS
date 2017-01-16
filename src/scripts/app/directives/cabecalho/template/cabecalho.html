@@ -1,0 +1,19 @@
+<md-toolbar layout="row">
+    <div layout="row" flex="100" layout-align="end center">
+        <a ui-sref="vendas.home" class="icon-menu">
+            <ng-md-icon icon="home" size="35" alt="Home">
+                <md-tooltip md-direction="bottom">
+                    {{'pagina-inicial' | translate}}
+                </md-tooltip>
+            </ng-md-icon>
+        </a>
+        <ng-md-icon icon="help" class="icon-menu" size="35" alt="Ajuda">
+            <md-tooltip md-direction="bottom">
+                {{'Ajuda' | translate}}
+            </md-tooltip>
+        </ng-md-icon>
+        <md-button class="md-fab md-primary md-hue-2">
+            <md-icon>person</md-icon>
+        </md-button>
+    </div>
+</md-toolbar>

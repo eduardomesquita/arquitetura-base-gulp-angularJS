@@ -15,6 +15,7 @@
         });
 
         $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams) {
+            var titleKey = 'sandbox-app'
             if (toState.data && toState.data.pageTitle) {
                 titleKey = toState.data.pageTitle;
             }
