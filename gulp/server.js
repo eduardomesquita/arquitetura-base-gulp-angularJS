@@ -34,39 +34,16 @@ function browserSyncInit(baseDir, browser) {
    * For more details and option, https://github.com/chimurai/http-proxy-middleware/blob/v0.9.0/README.md
    */
   var proxyRoutesApi = [
-    '/api',
-    '/dominio',
-    '/ect',
-    '/imovel',
-    '/receita',
-    '/servico',
-    '/tipo-assunto',
-    '/solicitante',
-    '/formulario-web',
-    '/comum',
-    '/error',
-    '/requerimento',
-    '/cliente'
+    '/api'
   ];
-
-  var proxyRoutesGeoServer = [
-    '/geoserver'
-  ];
-
 
   var optionsApi = {
     target: 'http://localhost:8081',
   };
 
-  var optionsServer = {
-    target: 'http://localhost:8082',
-  };
-
-
   var proxyApi = proxyMiddleware(proxyRoutesApi, optionsApi);
-  var proxyGeoServer = proxyMiddleware(proxyRoutesGeoServer, optionsServer);
 
-  server.middleware = [proxyApi, proxyGeoServer];
+  server.middleware = [proxyApi];
 
   browserSync.instance = browserSync.init({
     startPath: '/',
@@ -85,12 +62,4 @@ gulp.task('serve', ['watch'], function () {
 
 gulp.task('serve:dist', ['build'], function () {
   browserSyncInit(conf.paths.dist);
-});
-
-gulp.task('serve:e2e', ['inject'], function () {
-  browserSyncInit([conf.paths.tmp + '/serve', conf.paths.src], []);
-});
-
-gulp.task('serve:e2e-dist', ['build'], function () {
-  browserSyncInit(conf.paths.dist, []);
 });
