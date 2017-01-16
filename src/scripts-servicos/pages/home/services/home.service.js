@@ -4,12 +4,14 @@
 
 	angular
 		.module('sandbox-app')
-		.service('homeService', function () {
+		.service('homeService', [homeService]);
+
+		function homeService() {
 
 			return {
 				
 			}
-		});
+		}
 
 })();
 

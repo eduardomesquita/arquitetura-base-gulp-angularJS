@@ -1,9 +1,16 @@
-'use strict';
-angular.module('sandbox-app')
-    .factory('servicoService', ['$scope', function ($scope) {
+(function(){
+    
+    'use strict';
+    
+    angular
+        .module('sandbox-app')
+        .service('servicoService', ['$scope', servicoService]);
+
+        function servicoService($scope) {
 
 
-        return {
-            
-        };
-    }]);
+            return {
+                
+            };
+        }
+})()
