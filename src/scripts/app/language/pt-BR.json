@@ -1,7 +1,10 @@
 {
  "ajuda": "Ajuda",
  "configuracoes-aplicacao": "Configurações da aplicação",
+ "cadastrar": "Cadastrar",
+ "consultar": "Consultar",
  "notificao": "Notificações",
- "pagina-inicial": "Página inicial"
+ "pagina-inicial": "Página inicial",
+ "sand-box": "SANDBOX APP"
 
 }
