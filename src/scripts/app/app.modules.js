@@ -26,6 +26,7 @@
         'angularMoment',
         'ncy-angular-breadcrumb',
         'ngSanitize',
-        'textAngular']);
+        'textAngular',
+        'toaster']);
 
 })();

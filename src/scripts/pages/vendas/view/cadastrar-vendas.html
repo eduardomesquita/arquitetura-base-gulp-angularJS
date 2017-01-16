@@ -1,0 +1,35 @@
+<div class="standard">
+
+  <form name="form" ng-submit="validar(form) && salvar()" novalidate>
+
+      <div layout-margin="5" layout="row" layout-xs="column">
+        <md-input-container flex>
+          <label>{{'nome' | translate}}*</label>
+          <input ng-model="vendas.nome"
+                 md-maxlength="100"
+                 name="{{'nome' | translate}}"
+                 ng-required="true">
+        </md-input-container>
+      </div>
+
+        <div layout="row" layout-margin="5">
+          <md-input-container flex>
+            <label>{{'preco' | translate}}*</label>
+            <input ng-model="vendas.precos" 
+                   name="{{'preco' | translate}}"  
+                   ui-money-mask 
+                   ng-required="true">
+          </md-input-container>
+        </div>
+
+      <div layout="row" layout-sm="column" layout-align="end center">
+          <md-button class="md-raised" ui-sref="vendas.home">
+              {{'voltar' | translate | uppercase}}
+          </md-button>
+          <md-button class="md-raised" type="submit">
+              {{'salvar' | translate | uppercase}}
+          </md-button>
+      </div>
+
+    </form>
+</div>

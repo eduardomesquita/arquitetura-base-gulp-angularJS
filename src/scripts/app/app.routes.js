@@ -29,22 +29,22 @@
 
       .state('vendas.consultar', {
         url: '/consultar',
-        templateUrl: 'scripts/pages/servicos/view/cadastrarServicos.tmpl.html',
-        controller: 'cadastrarServicosController as servicosAddCtrl',
+        templateUrl: 'scripts/pages/vendas/view/cadastrar-vendas.html',
+        controller: 'cadastrarVendasController as cadastrar',
         resolve: {
           trans: function (Traducoes) {
-            return new Traducoes('scripts/pages/servicos/language');
+            return new Traducoes('scripts/pages/vendas/language');
           }
         }
       })
 
       .state('vendas.cadastrar', {
         url: '/cadastrar',
-        templateUrl: 'scripts/pages/servicos/view/cadastrarServicos.tmpl.html',
-        controller: 'cadastrarServicosController as servicosAddCtrl',
+        templateUrl: 'scripts/pages/vendas/view/cadastrar-vendas.html',
+        controller: 'cadastrarVendasController as cadastrar',
         resolve: {
           trans: function (Traducoes) {
-            return new Traducoes('scripts/pages/servicos/language');
+            return new Traducoes('scripts/pages/vendas/language');
           }
         }
       })

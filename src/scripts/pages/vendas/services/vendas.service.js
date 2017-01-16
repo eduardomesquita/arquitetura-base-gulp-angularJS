@@ -4,9 +4,9 @@
     
     angular
         .module('sandbox-app')
-        .service('servicoService', ['$scope', servicoService]);
+        .service('vendasService', ['$scope', vendasService]);
 
-    function servicoService($scope) {
+    function vendasService($scope) {
 
 
         return {

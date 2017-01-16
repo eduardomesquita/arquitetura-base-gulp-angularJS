@@ -4,9 +4,30 @@
     
     angular
         .module('sandbox-app')
-        .controller('comumService',  ['$scope',  function ($scope) {
+        .service('comumService',  ['toaster',  function (toaster) {
 
-        debugger
+        var exibirMensagemErro = function(mensagem){
+              toaster.pop({
+                type: 'error',
+                body: mensagem,
+                showCloseButton: true,
+                bodyOutputType: 'trustedHtml'
+              });
+        };
+
+        var exibirMensagemSucesso = function(mensagem){
+              toaster.pop({
+                type: 'sucess',
+                body: mensagem,
+                showCloseButton: true,
+                bodyOutputType: 'trustedHtml'
+              });
+        };
+
+        return {
+            exibirMensagemErro: exibirMensagemErro,
+            exibirMensagemSucesso: exibirMensagemSucesso
+        };
 
     }]);
 
