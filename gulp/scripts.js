@@ -2,7 +2,7 @@
 
 var path = require('path');
 var gulp = require('gulp');
-var conf = require('./config');
+var conf = require('./conf');
 
 var browserSync = require('browser-sync');
 
@@ -19,7 +19,7 @@ gulp.task('scripts', function() {
 });
 
 function buildScripts() {
-  return gulp.src(path.join(conf.paths.src, '/scripts/**/*.js'))
+  return gulp.src(path.join(conf.paths.src, '/scripts-servicos/**/*.js'))
     .pipe($.eslint())
     .pipe($.eslint.format())
     .pipe($.size())

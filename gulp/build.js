@@ -2,7 +2,7 @@
 
 var path = require('path');
 var gulp = require('gulp');
-var conf = require('./config');
+var conf = require('./conf');
 
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
@@ -10,8 +10,8 @@ var $ = require('gulp-load-plugins')({
 
 gulp.task('partials', function () {
   return gulp.src([
-    path.join(conf.paths.src, '/scripts/**/*.html'),
-    path.join(conf.paths.tmp, '/serve/scripts/**/*.html')
+    path.join(conf.paths.src, '/scripts-servicos/**/*.html'),
+    path.join(conf.paths.tmp, '/serve/scripts-servicos/**/*.html')
   ])
     .pipe($.htmlmin({
       removeEmptyAttributes: true,
@@ -20,8 +20,8 @@ gulp.task('partials', function () {
       collapseWhitespace: true
     }))
     .pipe($.angularTemplatecache('templateCacheHtml.js', {
-      module: 'sandboxApp',
-      root: 'scripts'
+      module: 'sandbox-app',
+      root: 'scripts-servicos'
     }))
     .pipe(gulp.dest(conf.paths.tmp + '/partials/'));
 });
@@ -93,4 +93,4 @@ gulp.task('clean', function () {
   return $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/')]);
 });
 
-gulp.task('build', ['clean','html', 'fonts', 'other']);
+gulp.task('build', ['clean', 'html', 'fonts', 'other']);

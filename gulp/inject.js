@@ -2,7 +2,7 @@
 
 var path = require('path');
 var gulp = require('gulp');
-var conf = require('./config');
+var conf = require('./conf');
 
 var $ = require('gulp-load-plugins')();
 
@@ -17,14 +17,14 @@ gulp.task('inject-reload', ['inject'], function() {
 
 gulp.task('inject', ['scripts'], function () {
   var injectStyles = gulp.src([
-    path.join(conf.paths.src, '/scripts/**/*.css')
+    path.join(conf.paths.src, '/scripts-servicos/**/*.css')
   ], { read: false });
 
   var injectScripts = gulp.src([
-    path.join(conf.paths.src, '/scripts/**/*.modules.js'),
-    path.join(conf.paths.src, '/scripts/**/*.js'),
-    path.join('!' + conf.paths.src, '/scripts/**/*.spec.js'),
-    path.join('!' + conf.paths.src, '/scripts/**/*.mock.js'),
+    path.join(conf.paths.src, '/scripts-servicos/**/*.modules.js'),
+    path.join(conf.paths.src, '/scripts-servicos/**/*.js'),
+    path.join('!' + conf.paths.src, '/scripts-servicos/**/*.spec.js'),
+    path.join('!' + conf.paths.src, '/scripts-servicos/**/*.mock.js'),
   ])
   .pipe($.angularFilesort()).on('error', conf.errorHandler('AngularFilesort'));
 
