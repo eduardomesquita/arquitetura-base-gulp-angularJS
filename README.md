@@ -7,9 +7,8 @@ A simple sample [AngularJS](https://angularjs.org/) for web application, using [
 - Node (>= v4.6.1)
 - NPM (>= 2.15.9)
 
-## Getting Started
-- Install
-
+## Install
+- Clone this repository
 ```bash
 git clone https://github.com/eduardomesquita/arquitetura-base-gulp-angularjs.git
 ```
