@@ -29,8 +29,8 @@
 
       .state('vendas.consultar', {
         url: '/consultar',
-        templateUrl: 'scripts/pages/vendas/view/cadastrar-vendas.html',
-        controller: 'cadastrarVendasController as cadastrar',
+        templateUrl: 'scripts/pages/vendas/view/consultar-vendas.html',
+        controller: 'consultarVendasController as consultar',
         resolve: {
           trans: function (Traducoes) {
             return new Traducoes('scripts/pages/vendas/language');

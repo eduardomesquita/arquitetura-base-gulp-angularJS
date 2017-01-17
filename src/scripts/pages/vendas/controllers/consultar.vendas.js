@@ -4,12 +4,17 @@
 
     angular
         .module('sandbox-app')
-        .controller('consultarVendasController', ['$scope', consultarVendasController]);
+        .controller('consultarVendasController', ['$scope', 'vendasService', consultarVendasController]);
 
-    function consultarVendasController($scope) {
+    function consultarVendasController($scope, vendasService) {
 
-            var vm = $scope;
+        var vm = $scope;
 
+        var init = function(){
+            vm.vendas = vendasService.getVendas();
+        };
+
+        init();
 
     }
 

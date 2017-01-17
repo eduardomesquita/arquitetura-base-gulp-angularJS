@@ -1,115 +1,25 @@
-<titulo-servico ng-if="menuAcessos" class="texto-principal"></titulo-servico>
-
-    <form name="dataTableImovel">
-
-        <md-content flex>
-            <div layout="row">
-                <md-input-container flex>
-                    <label>{{'label-nome-titulo' | translate}}</label>
-                    <input ng-model="titulo"/>
-                </md-input-container>
-
-                <md-input-container flex>
-                    <label>{{'label-situacao' | translate}}</label>
-                    <md-select ng-model="situacao">
-                        <md-option value="">Selecione</md-option>
-                        <md-option value="true">Ativo</md-option>
-                        <md-option value="false">Suspenso</md-option>
-                    </md-select>
-                </md-input-container>
-            </div>
-
-            <!--- Inicio dos botoes -->
-            <div layout="row" layout-align="end right">
-                <section layout="row" layout-sm="column" layout-align="end" layout-wrap>
-                    <md-button class="md-raised" ng-click="clearFilter()">
-                        <md-tooltip md-direction="bottom">
-                            {{'toltip-limpar-campos' | translate}}
-                        </md-tooltip>
-                        {{'btn-limpar' | translate }}
-                    </md-button>
-
-                    <md-button class="md-raised" ng-click="filterFindAll()"
-                               exibir-elemento-por-permissao="SERVICOS.MANTER_SERVICO,SERVICOS.CONSULTAR_SERVICO">
-                        <md-tooltip md-direction="bottom">
-                            {{'toltip-pesquiser-servicos' | translate}}
-                        </md-tooltip>
-                        {{'btn-pesquisar' | translate }}
-                    </md-button>
-
-                    <md-button class="md-raised" ng-click="novoCadastro();" exibir-elemento-por-permissao="SERVICOS.MANTER_SERVICO">
-                        <md-tooltip md-direction="bottom">
-                            {{'toltip-adicionar-servicos' | translate}}
-                        </md-tooltip>
-                        {{'btn-novo' | translate }}
-                    </md-button>
-                </section>
-            </div>
-            <!--- fim dos botoes -->
-
-        </md-content>
-    </form>
-
-
-<div flex style="margin-top: 3%">
-    <div layout="column" ng-show="servicos.length > 0">
-        <md-conent flex>
-            <md-table-container>
-                <table md-table ng-model="vm.imovelSelecionado">
-                    <thead md-head>
-                    <tr md-row style="color: #fff; font-size: 12pt">
-                        <th md-column class="texto-centro">Nome</th>
-                        <th md-column class="texto-centro">Situa&ccedil;&atilde;o</th>
-                        <th md-column class="texto-centro">A&ccedil;&otilde;es</th>
+<div layout="column" ng-show="vendas.length > 0">
+    <md-conent flex>
+        <md-table-container>
+            <table md-table>
+                <thead md-head>
+                    <tr md-row>
+                        <th md-column class="texto-centro">{{'nome'  | translate | uppercase}}</th>
+                        <th md-column class="texto-centro">{{'preco' | translate | uppercase}}</th>
                     </tr>
-                    </thead>
+                </thead>
 
-                    <tbody md-body>
-                    <tr md-row ng-repeat="item in servicos">
+                <tbody md-body>
+                    <tr md-row ng-repeat="item in vendas">
                         <td md-cell class="texto-centro-corpo">
-                            <span ng-bind="item.titulo"></span>
+                            <label>{{item.nome}}</label>
                         </td>
                         <td md-cell class="texto-centro-corpo">
-                            <span ng-bind="item.ativo === true ? 'Ativo' : 'Suspenso'"></span>
+                             <label>{{item.preco | currency }}</label>
                         </td>
-
-                        <td md-cell class="texto-centro-corpo">
-                            <div layout="row" layout-align="center center">
-                                <div layout-margin="5">
-                                    <a href="#/servicos/editar/{{item.id}}">
-                                        <ng-md-icon icon="create" style="fill:#788489" size="22" alt="Editar serviço">
-                                            <md-tooltip>Editar servi&ccedil;o</md-tooltip>
-                                        </ng-md-icon>
-                                    </a>
-                                </div>
-                                <div layout-margin="5">
-                                    <md-switch ng-model="item.ativo" class="md-primary" aria-label="Switch No Ink"
-                                               md-no-ink ng-change="toggleAtivo($event, item);">
-                                    </md-switch>
-                                </div>
-                                <div layout-margin="5">
-                                    <a href="#">
-                                        <ng-md-icon icon="delete" style="fill:#788489" size="22" alt="Excluir serviço"
-                                                    exibir-elemento-por-permissao="SERVICOS.EXCLUIR_SERVICO"
-                                                    ng-click="showConfirmExcluir($event, item.id);">
-                                            <md-tooltip>Excluir servi&ccedil;o</md-tooltip>
-                                        </ng-md-icon>
-                                    </a>
-                                </div>
-                            </div>
-                        </td>
-
                     </tr>
-                    </tbody>
-                </table>
-            </md-table-container>
-
-            <md-table-pagination style="margin: auto; background-color: #5bf869;"
-                                 ng-show="servicos.length > 0" md-limit="tamanhoLimite" md-limit-options="[5, 10, 15]"
-                                 md-page="registroInicial" md-total="{{totalItems}}" md-on-paginate="findPagination"
-                                 md-page-select>
-            </md-table-pagination>
-
-        </md-conent>
-    </div>
+                </tbody>
+            </table>
+        </md-table-container>
+    </md-conent>
 </div>

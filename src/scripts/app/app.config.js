@@ -34,10 +34,6 @@
 
         }])
 
-        .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
-            cfpLoadingBarProvider.includeBar = true;
-        }])
-
         .config(function ($mdDateLocaleProvider, moment) {
 
             $mdDateLocaleProvider.formatDate = function(date) {

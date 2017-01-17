@@ -4,13 +4,20 @@
     
     angular
         .module('sandbox-app')
-        .service('vendasService', ['$scope', vendasService]);
+        .factory('vendasService', [vendasService]);
 
     function vendasService($scope) {
 
+        var vendas = [];
+
+
+        var getVendas = function(){
+            return vendas;
+        };
+
 
         return {
-            
+            getVendas: getVendas
         };
     }
 
