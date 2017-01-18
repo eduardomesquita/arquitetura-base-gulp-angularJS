@@ -6,6 +6,7 @@ A simple sample [AngularJS](https://angularjs.org/) for web application, using [
 
 - Node (>= v4.6.1)
 - NPM (>= 2.15.9)
+- Bower (>= 1.7.9)
 
 ## Install
 - Clone this repository
